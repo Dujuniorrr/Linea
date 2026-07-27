@@ -73,11 +73,11 @@ export const about = {
 export const architecturalProjects = [
   {
     slug: "residencia-carmen",
-    title: "Residência Carmen Maria Porto",
-    client: "CARMEN MARIA PORTO CALDEIRA TAQUES",
+    title: "Residência Carmen Maria",
+    client: "CARMEN MARIA",
     work: "Residencial",
     area: "400 m²",
-    location: "Rua Alexandre Menguer, 4325 | Juruqui | Almirante Tamandaré – PR",
+    location: "Almirante Tamandaré – PR",
     description: "Projeto desenvolvido para uma cliente exigente, que sonhava com um lar capaz de transmitir harmonia e leveza. Em um amplo lote estilo chácara, a proposta buscou unir conforto, acolhimento e a possibilidade de receber amigos e familiares com charme e funcionalidade.\n\nA residência foi planejada para oferecer espaços amplos e bem integrados, criando ambientes perfeitos para viver, descansar e aproveitar momentos especiais. Cada detalhe foi pensado para garantir conforto, beleza e a sensação de estar em um refúgio particular.",
     cover: galleryUrl("residencia-carmen_03_img-9371.jpg"),
     gallery: images([
