@@ -90,9 +90,7 @@ defineProps({
   max-height: calc(100% - 1.75rem);
   object-fit: contain;
   object-position: center;
-  filter: grayscale(1);
-  opacity: 0.7;
-  transition: filter 0.4s var(--ease), opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  transition: transform 0.4s var(--ease);
 }
 
 .caption {
@@ -118,8 +116,6 @@ defineProps({
 }
 
 .tile:hover .face img {
-  filter: grayscale(0);
-  opacity: 1;
   transform: scale(1.04);
 }
 
