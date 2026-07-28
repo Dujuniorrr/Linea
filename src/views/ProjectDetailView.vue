@@ -1,9 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { findArchitectural } from '../data/content'
 import GalleryGrid from '../components/GalleryGrid.vue'
 import PageNav from '../components/PageNav.vue'
+import NotFoundView from './NotFoundView.vue'
 
 const route = useRoute()
 const project = computed(() => findArchitectural(route.params.slug))
@@ -49,18 +50,7 @@ const project = computed(() => findArchitectural(route.params.slug))
     </section>
   </div>
 
-  <div v-else class="page container">
-    <PageNav
-      back-to="/projetos"
-      back-label="Projetos"
-      :crumbs="[{ label: 'Início', to: '/' }, { label: 'Projetos Arquitetônicos', to: '/projetos' }]"
-      current="Não encontrado"
-    />
-    <h1 class="page-title tight">Projeto não encontrado</h1>
-    <RouterLink class="btn btn-primary" to="/projetos" style="margin-top: 1.5rem">
-      Ver todos os projetos
-    </RouterLink>
-  </div>
+  <NotFoundView v-else />
 </template>
 
 <style scoped>

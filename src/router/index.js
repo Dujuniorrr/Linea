@@ -4,6 +4,7 @@ import ProjectsView from '../views/ProjectsView.vue'
 import ProjectDetailView from '../views/ProjectDetailView.vue'
 import ComplementaryView from '../views/ComplementaryView.vue'
 import ComplementaryDetailView from '../views/ComplementaryDetailView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -37,6 +38,12 @@ const router = createRouter({
     { path: '/contato', redirect: '/#contato' },
     { path: '/contact.aspx', redirect: '/#contato' },
     { path: '/page2.aspx', redirect: '/#clientes' },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView,
+      meta: { title: 'Página não encontrada' },
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition

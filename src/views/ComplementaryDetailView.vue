@@ -1,9 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { findComplementary } from '../data/content'
 import GalleryGrid from '../components/GalleryGrid.vue'
 import PageNav from '../components/PageNav.vue'
+import NotFoundView from './NotFoundView.vue'
 
 const route = useRoute()
 const project = computed(() => findComplementary(route.params.slug))
@@ -50,21 +51,7 @@ const project = computed(() => findComplementary(route.params.slug))
     </section>
   </div>
 
-  <div v-else class="page container">
-    <PageNav
-      back-to="/complementares"
-      back-label="Complementares"
-      :crumbs="[
-        { label: 'Início', to: '/' },
-        { label: 'Projetos Complementares', to: '/complementares' },
-      ]"
-      current="Não encontrado"
-    />
-    <h1 class="page-title tight">Conteúdo não encontrado</h1>
-    <RouterLink class="btn btn-primary" to="/complementares" style="margin-top: 1.5rem">
-      Voltar
-    </RouterLink>
-  </div>
+  <NotFoundView v-else />
 </template>
 
 <style scoped>
