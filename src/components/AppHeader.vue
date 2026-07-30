@@ -28,7 +28,7 @@ function isActive(item) {
 <template>
   <header class="header">
     <div class="container header-inner">
-      <RouterLink to="/" class="brand" aria-label="Linea — início">
+      <RouterLink to="/" class="brand" aria-label="Linea Engenharia e Arquitetura — início" title="Linea Engenharia e Arquitetura — início">
         <BrandLogo size="md" />
       </RouterLink>
 
@@ -38,6 +38,7 @@ function isActive(item) {
         :aria-expanded="open"
         aria-controls="site-nav"
         :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
+        :title="open ? 'Fechar menu' : 'Abrir menu'"
         @click="open = !open"
       >
         <span class="burger" :class="{ open }" aria-hidden="true">
@@ -54,6 +55,7 @@ function isActive(item) {
           :to="item.to"
           class="nav-link"
           :class="{ active: isActive(item) }"
+          :title="item.label"
         >
           {{ item.label }}
         </RouterLink>

@@ -28,7 +28,7 @@ const router = createRouter({
       meta: {
         title: 'Projetos Arquitetônicos',
         description:
-          'Portfólio de projetos arquitetônicos da Linea: residenciais, comerciais, industriais, escolas e centros de eventos em Curitiba e região.',
+          'Portfólio Linea: projetos residenciais, comerciais, industriais e institucionais em Curitiba e região.',
       },
     },
     {
@@ -48,7 +48,7 @@ const router = createRouter({
       meta: {
         title: 'Projetos Complementares',
         description:
-          'Projetos complementares em BIM: prevenção de incêndio, hidrossanitário, elétrico de baixa tensão e vigilância sanitária.',
+          'Projetos complementares em BIM: prevenção de incêndio, hidrossanitário, elétrico e vigilância sanitária.',
       },
     },
     {

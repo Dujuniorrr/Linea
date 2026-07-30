@@ -47,7 +47,7 @@ const project = computed(() => findComplementary(route.params.slug))
 
     <section class="section">
       <h2 class="section-title">Galeria</h2>
-      <GalleryGrid :items="project.gallery" />
+      <GalleryGrid :items="project.gallery" :project-title="project.title" />
     </section>
   </div>
 

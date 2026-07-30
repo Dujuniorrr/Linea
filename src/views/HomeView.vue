@@ -113,12 +113,30 @@ function scrollToContent() {
         </div>
         <p class="hero-lead fade-up fade-up-delay-2">{{ site.tagline }}</p>
         <div class="hero-actions fade-up fade-up-delay-3">
-          <RouterLink class="btn btn-ghost" to="/projetos">Ver projetos</RouterLink>
-          <a class="btn btn-primary" :href="whatsappHref" target="_blank" rel="noopener noreferrer">
+          <RouterLink
+            class="btn btn-ghost"
+            to="/projetos"
+            title="Ver projetos arquitetônicos da Linea"
+          >
+            Ver projetos
+          </RouterLink>
+          <a
+            class="btn btn-primary"
+            :href="whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Falar conosco no WhatsApp"
+          >
             Falar conosco
           </a>
         </div>
-        <button class="scroll-hint fade-up fade-up-delay-3" type="button" @click="scrollToContent">
+        <button
+          class="scroll-hint fade-up fade-up-delay-3"
+          type="button"
+          title="Saiba mais sobre a Linea"
+          aria-label="Saiba mais sobre a Linea"
+          @click="scrollToContent"
+        >
           <span class="scroll-hint-label">Saiba mais</span>
           <span class="scroll-hint-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -271,7 +289,9 @@ function scrollToContent() {
             <div class="section-intro compact">
               <h2 class="section-title">Projetos em destaque</h2>
             </div>
-            <RouterLink class="see-all" to="/projetos">Ver todos</RouterLink>
+            <RouterLink class="see-all" to="/projetos" title="Ver todos os projetos arquitetônicos">
+              Ver todos
+            </RouterLink>
           </div>
           <p class="section-bridge">
             Cada obra traduz nosso compromisso com soluções viáveis, estética consistente e desempenho
@@ -291,7 +311,13 @@ function scrollToContent() {
             <div class="section-intro compact">
               <h2 class="section-title">Complementares em destaque</h2>
             </div>
-            <RouterLink class="see-all" to="/complementares">Ver todos</RouterLink>
+            <RouterLink
+              class="see-all"
+              to="/complementares"
+              title="Ver todos os projetos complementares"
+            >
+              Ver todos
+            </RouterLink>
           </div>
           <p class="section-bridge">
             São os projetos complementares que garantem que tudo funcione na prática: da segurança à
@@ -319,7 +345,13 @@ function scrollToContent() {
             A Linea integra arquitetura, complementares e regularização em um único fluxo de trabalho,
             reduzindo gargalos e aumentando a previsibilidade da sua obra.
           </p>
-          <a class="btn btn-primary" :href="whatsappHref" target="_blank" rel="noopener noreferrer">
+          <a
+            class="btn btn-primary"
+            :href="whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Falar conosco no WhatsApp"
+          >
             Falar conosco
           </a>
         </div>
@@ -347,7 +379,13 @@ function scrollToContent() {
                 Atendimento direto com a arquiteta responsável — sede em Curitiba, Paraná.
               </p>
             </div>
-            <a class="btn btn-primary" :href="whatsappHref" target="_blank" rel="noopener noreferrer">
+            <a
+              class="btn btn-primary"
+              :href="whatsappHref"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Falar conosco no WhatsApp"
+            >
               Falar conosco
             </a>
           </div>

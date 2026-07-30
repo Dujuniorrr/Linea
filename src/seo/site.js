@@ -2,8 +2,12 @@ export const SITE_URL = 'https://linea.eng.br'
 
 export const SITE_NAME = 'Linea Engenharia e Arquitetura'
 
+/** Título da home: ideal entre 50–60 caracteres */
+export const DEFAULT_TITLE = 'Linea Engenharia e Arquitetura em Curitiba | Projetos BIM'
+
+/** Meta description: ideal até ~155 caracteres */
 export const DEFAULT_DESCRIPTION =
-  'Linea Engenharia e Arquitetura em Curitiba — projetos arquitetônicos e complementares em BIM, prevenção de incêndio, hidrossanitário, elétrico e regularização completa de obras.'
+  'Linea em Curitiba: arquitetura e engenharia em BIM, prevenção de incêndio, projetos complementares e regularização de obras.'
 
 export const DEFAULT_KEYWORDS = [
   'Linea Engenharia',
@@ -29,7 +33,7 @@ export function absoluteUrl(path = '/') {
   return `${SITE_URL}${normalized}`
 }
 
-export function truncate(text, max = 160) {
+export function truncate(text, max = 155) {
   if (!text) return DEFAULT_DESCRIPTION
   const clean = String(text).replace(/\s+/g, ' ').trim()
   if (clean.length <= max) return clean

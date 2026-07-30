@@ -13,9 +13,15 @@ import { RouterLink } from 'vue-router'
     </p>
 
     <div class="actions">
-      <RouterLink class="btn btn-primary" to="/">Ir para o início</RouterLink>
-      <RouterLink class="btn btn-ghost" to="/projetos">Ver projetos</RouterLink>
-      <RouterLink class="btn btn-ghost" to="/#contato">Falar conosco</RouterLink>
+      <RouterLink class="btn btn-primary" to="/" title="Ir para a página inicial">
+        Ir para o início
+      </RouterLink>
+      <RouterLink class="btn btn-ghost" to="/projetos" title="Ver projetos arquitetônicos">
+        Ver projetos
+      </RouterLink>
+      <RouterLink class="btn btn-ghost" to="/#contato" title="Ver informações de contato">
+        Falar conosco
+      </RouterLink>
     </div>
   </div>
 </template>

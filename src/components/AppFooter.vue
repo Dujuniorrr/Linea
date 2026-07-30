@@ -13,14 +13,24 @@ import BrandLogo from './BrandLogo.vue'
       </div>
 
       <nav class="footer-nav" aria-label="Rodapé">
-        <RouterLink v-for="item in navigation" :key="item.to" :to="item.to">
+        <RouterLink
+          v-for="item in navigation"
+          :key="item.to"
+          :to="item.to"
+          :title="item.label"
+        >
           {{ item.label }}
         </RouterLink>
       </nav>
     </div>
     <div class="container footer-bottom">
       <span>© {{ new Date().getFullYear() }} {{ site.legalName }}</span>
-      <span>Curitiba — Paraná · <a :href="site.url">{{ site.url.replace('https://', '') }}</a></span>
+      <span>
+        Curitiba — Paraná ·
+        <a :href="site.url" :title="`Site oficial ${site.legalName}`">
+          {{ site.url.replace('https://', '') }}
+        </a>
+      </span>
     </div>
   </footer>
 </template>

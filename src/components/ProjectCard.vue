@@ -12,11 +12,18 @@ defineProps({
 </script>
 
 <template>
-  <RouterLink :to="to" class="card">
+  <RouterLink :to="to" class="card" :title="`Ver projeto: ${title}`" :aria-label="`Ver projeto: ${title}`">
     <div class="media">
-      <img v-if="image" :src="image" :alt="title" loading="lazy" />
-      <div v-else class="placeholder" />
-      <span class="index">{{ String(index + 1).padStart(2, '0') }}</span>
+      <img
+        v-if="image"
+        :src="image"
+        :alt="`${title}${subtitle ? ` — ${subtitle}` : ''}`"
+        :title="title"
+        loading="lazy"
+        decoding="async"
+      />
+      <div v-else class="placeholder" role="img" :aria-label="title" />
+      <span class="index" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
     </div>
     <div class="body">
       <h3>{{ title }}</h3>

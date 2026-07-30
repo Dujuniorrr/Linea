@@ -23,7 +23,12 @@ defineProps({
 
 <template>
   <nav class="page-nav" aria-label="Navegação da página">
-    <RouterLink class="back-btn" :to="backTo" :aria-label="`Voltar para ${backLabel}`">
+    <RouterLink
+      class="back-btn"
+      :to="backTo"
+      :aria-label="`Voltar para ${backLabel}`"
+      :title="`Voltar para ${backLabel}`"
+    >
       <span class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
           <path d="M15 6 L9 12 L15 18" stroke-linecap="square" stroke-linejoin="miter" />
@@ -34,7 +39,7 @@ defineProps({
 
     <ol class="crumbs" v-if="crumbs.length || current">
       <li v-for="crumb in crumbs" :key="crumb.to || crumb.label">
-        <RouterLink v-if="crumb.to" :to="crumb.to">{{ crumb.label }}</RouterLink>
+        <RouterLink v-if="crumb.to" :to="crumb.to" :title="crumb.label">{{ crumb.label }}</RouterLink>
         <span v-else>{{ crumb.label }}</span>
       </li>
       <li v-if="current" class="current" aria-current="page">

@@ -4,6 +4,7 @@ import {
   DEFAULT_DESCRIPTION,
   DEFAULT_KEYWORDS,
   DEFAULT_OG_IMAGE,
+  DEFAULT_TITLE,
   SITE_NAME,
   truncate,
 } from './site'
@@ -42,7 +43,7 @@ export function applySeo({
   noindex = false,
   keywords = DEFAULT_KEYWORDS,
 } = {}) {
-  const fullTitle = title ? `${title} · ${BRAND_TITLE}` : BRAND_TITLE
+  const fullTitle = title ? `${title} · ${BRAND_TITLE}` : DEFAULT_TITLE
   const desc = truncate(description)
   const url = absoluteUrl(path)
 

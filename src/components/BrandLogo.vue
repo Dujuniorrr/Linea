@@ -29,12 +29,17 @@ defineProps({
     :class="[variant, size, { mark: markOnly }]"
     role="img"
     aria-label="Linea Engenharia e Arquitetura"
+    title="Linea Engenharia e Arquitetura"
   >
     <img
       v-if="markOnly"
       class="mark-img"
       :src="logoMark"
-      alt=""
+      alt="Símbolo Linea Engenharia e Arquitetura"
+      title="Linea Engenharia e Arquitetura"
+      width="152"
+      height="152"
+      decoding="async"
       draggable="false"
     />
     <img
@@ -42,6 +47,11 @@ defineProps({
       class="wordmark-img"
       :src="logoDark"
       alt="Linea Engenharia e Arquitetura"
+      title="Linea Engenharia e Arquitetura"
+      width="480"
+      height="120"
+      decoding="async"
+      :fetchpriority="size === 'hero' ? 'high' : undefined"
       draggable="false"
     />
   </span>

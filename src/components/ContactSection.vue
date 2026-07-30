@@ -1,5 +1,10 @@
 <script setup>
 import { contacts } from '../data/content'
+
+const personTitle = [
+  contacts.person?.name,
+  contacts.person?.roles?.[0],
+].filter(Boolean).join(' — ')
 </script>
 
 <template>
@@ -8,8 +13,12 @@ import { contacts } from '../data/content'
       <div class="portrait">
         <img
           :src="contacts.person.photo"
-          :alt="contacts.person.name"
+          :alt="personTitle"
+          :title="personTitle"
+          width="320"
+          height="400"
           loading="lazy"
+          decoding="async"
           draggable="false"
         />
       </div>
@@ -22,14 +31,23 @@ import { contacts } from '../data/content'
     </aside>
 
     <div class="offices">
-      <article v-for="office in contacts.offices" :key="office.title" class="office">
+      <article
+        v-for="office in contacts.offices"
+        :key="office.title"
+        class="office"
+      >
         <h3>{{ office.title }}</h3>
 
         <div class="block">
           <h4>Telefone</h4>
           <ul>
             <li v-for="phone in office.phones" :key="phone.number">
-              <a :href="phone.href" target="_blank" rel="noopener noreferrer">
+              <a
+                :href="phone.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                :title="phone.whatsapp ? `WhatsApp ${phone.number}` : `Ligar para ${phone.number}`"
+              >
                 {{ phone.number }}
               </a>
               <span v-if="phone.whatsapp" class="tag">WhatsApp</span>
@@ -42,7 +60,9 @@ import { contacts } from '../data/content'
           <h4>E-mail</h4>
           <ul>
             <li v-for="email in office.emails" :key="email">
-              <a :href="`mailto:${email}`">{{ email }}</a>
+              <a :href="`mailto:${email}`" :title="`Enviar e-mail para ${email}`">
+                {{ email }}
+              </a>
             </li>
           </ul>
         </div>
@@ -54,11 +74,11 @@ import { contacts } from '../data/content'
 
         <div class="block">
           <h4>Endereço</h4>
-          <p>
+          <address>
             <template v-for="(line, i) in office.address" :key="line">
               {{ line }}<br v-if="i < office.address.length - 1" />
             </template>
-          </p>
+          </address>
         </div>
       </article>
     </div>
@@ -207,9 +227,11 @@ import { contacts } from '../data/content'
   font-weight: 500;
 }
 
-.block p {
+.block p,
+.block address {
   text-align: left;
   margin: 0;
+  font-style: normal;
 }
 
 .block ul {

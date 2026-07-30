@@ -1,4 +1,18 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/assets",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/assets/",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],

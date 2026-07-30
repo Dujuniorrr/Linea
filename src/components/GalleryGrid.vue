@@ -6,7 +6,16 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  projectTitle: {
+    type: String,
+    default: '',
+  },
 })
+
+function imageLabel(item) {
+  if (!item) return ''
+  return props.projectTitle ? `${props.projectTitle} — ${item.title}` : item.title
+}
 
 const activeIndex = ref(-1)
 const scale = ref(1)
@@ -277,10 +286,18 @@ onBeforeUnmount(() => {
         :key="item.src + i"
         type="button"
         class="thumb"
+        :title="`Ampliar: ${imageLabel(item)}`"
+        :aria-label="`Ampliar imagem: ${imageLabel(item)}`"
         @click="open(i)"
       >
         <span class="thumb-media">
-          <img :src="item.src" :alt="item.title" loading="lazy" />
+          <img
+            :src="item.src"
+            :alt="imageLabel(item)"
+            :title="imageLabel(item)"
+            loading="lazy"
+            decoding="async"
+          />
           <span class="thumb-zoom" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
               <circle cx="11" cy="11" r="6.5" />
@@ -299,14 +316,14 @@ onBeforeUnmount(() => {
         class="lightbox"
         role="dialog"
         aria-modal="true"
-        :aria-label="active.title"
+        :aria-label="imageLabel(active)"
         @click.self="close"
         @wheel.prevent="onWheel"
       >
         <header class="toolbar">
           <p class="meta">
             <span class="counter">{{ activeIndex + 1 }} / {{ items.length }}</span>
-            <span class="title">{{ active.title }}</span>
+            <span class="title">{{ imageLabel(active) }}</span>
           </p>
 
           <div class="actions">
@@ -345,8 +362,10 @@ onBeforeUnmount(() => {
         <div ref="stageEl" class="stage">
           <img
             :src="active.src"
-            :alt="active.title"
+            :alt="imageLabel(active)"
+            :title="imageLabel(active)"
             :style="imageStyle"
+            decoding="async"
             draggable="false"
             @dblclick="toggleZoom"
             @pointerdown="onPointerDown"

@@ -32,7 +32,14 @@ defineProps({
           >
             <li v-for="item in items" :key="`${copy}-${item.name}`" class="tile">
               <div class="face">
-                <img :src="item.logo" :alt="item.name" loading="lazy" draggable="false" />
+                <img
+                  :src="item.logo"
+                  :alt="`Logo ${item.name}`"
+                  :title="item.name"
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                />
               </div>
               <span class="caption">{{ item.name }}</span>
             </li>
