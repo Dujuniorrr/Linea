@@ -27,7 +27,7 @@ export const site = {
   slogan: 'Quando a solução for simples. A resposta vem de Deus!!',
   stats: [
     { value: '+800 mil', label: 'm² de projetos executados' },
-    { value: '+15', label: 'Anos de experiência' },
+    { value: '+19', label: 'Anos de experiência' },
     { value: '+500', label: 'Projetos aprovados' },
   ],
 }
@@ -43,9 +43,10 @@ export const navigation = [
 export const about = {
   title: 'Apresentação',
   intro:
-    'Com mais de uma década dedicada à excelência em engenharia e arquitetura, a Linea se destaca pelo profissionalismo, moldando o futuro com soluções inovadoras e atendimento excepcional.',
+    'Com quase duas décadas dedicadas à excelência em arquitetura e engenharia, a Linea se destaca pelo profissionalismo, moldando o futuro com soluções inovadoras, atendimento personalizado e a garantia de obras totalmente regularizadas.',
   experience:
-    'Com uma sólida base de mais de 10 anos de experiência em uma variedade de projetos desafiadores, nosso compromisso inabalável com a qualidade e a expertise técnica nos coloca à frente. Transformamos conceitos em realidade — de projetos residenciais a empreendimentos comerciais e infraestrutura — com precisão, eficiência e design visionário.',
+    'Ao longo de 19 anos, construímos uma base sólida atuando em projetos desafiadores e diversos. Nosso compromisso é atender qualquer demanda com profundo domínio das normas vigentes. A combinação entre conhecimento técnico e rigor normativo nos coloca à frente — transformamos conceitos em realidade, oferecendo desde Projetos de Arquitetura e Projetos Complementares até a Regularização completa de empreendimentos residenciais, comerciais e de infraestrutura.',
+  closing: 'Na Linea, unimos precisão, eficiência e responsabilidade em cada etapa. Conheça a Linea Engenharia.',
   projectTypes: [
     'Edifícios Residenciais',
     'Edifícios Comerciais',
@@ -374,6 +375,10 @@ export const partners = [
   {
     name: 'Obra 3',
     logo: new URL('../assets/images/logos/clients/obra-3.png', import.meta.url).href,
+  },
+  {
+    name: 'DuARCO Engenharia e Projetos',
+    logo: new URL('../assets/images/logos/partners/duarco.png', import.meta.url).href,
   },
 ]
 

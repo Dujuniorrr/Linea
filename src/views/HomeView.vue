@@ -84,6 +84,13 @@ function scrollToContent() {
           <p>{{ about.intro }}</p>
           <p>{{ about.experience }}</p>
         </div>
+        <div class="intro-manifesto" aria-label="Mensagem institucional">
+          <p class="manifesto-line">
+            Na Linea, unimos <strong>precisão, eficiência e responsabilidade</strong> em cada etapa.
+          </p>
+          <p class="manifesto-link">Conheça a Linea Engenharia.</p>
+        </div>
+
       </section>
 
       <section class="stats section">
@@ -98,9 +105,14 @@ function scrollToContent() {
           <p class="eyebrow">O que fazemos</p>
           <h2 class="section-title">Tipos de projetos realizados</h2>
           <p class="section-lead">
-            Do residencial ao industrial: soluções sob medida para cada tipo de edificação.
+            Do residencial ao industrial, entregamos projetos sob medida para realidades diferentes, com
+            o mesmo padrão de qualidade e controle técnico.
           </p>
         </div>
+        <p class="section-bridge">
+          Atendemos demandas específicas sem perder visão estratégica: funcionalidade, desempenho e
+          conformidade caminham juntos em cada projeto.
+        </p>
         <ul class="type-list">
           <li v-for="type in about.projectTypes" :key="type">{{ type }}</li>
         </ul>
@@ -111,10 +123,14 @@ function scrollToContent() {
           <p class="eyebrow">Expertise técnica</p>
           <h2 class="section-title">Serviços</h2>
           <p class="section-lead">
-            Projetos em BIM, aprovações e regularizações — com precisão normativa e acompanhamento
-            próximo em cada etapa.
+            Projetos em BIM, aprovações e regularizações com abordagem prática: menos retrabalho, mais
+            previsibilidade e execução com segurança.
           </p>
         </div>
+        <p class="section-bridge">
+          Mais do que entregar documentos técnicos, estruturamos soluções completas para sua obra evoluir
+          com fluidez junto aos órgãos competentes e equipes de execução.
+        </p>
         <div class="services">
           <article v-for="service in about.services" :key="service">
             <span class="service-line" aria-hidden="true" />
@@ -141,6 +157,10 @@ function scrollToContent() {
           </div>
           <RouterLink class="see-all" to="/projetos">Ver todos</RouterLink>
         </div>
+        <p class="section-bridge">
+          Cada obra apresentada aqui traduz nosso compromisso com soluções viáveis, estética consistente e
+          desempenho técnico no dia a dia de uso.
+        </p>
         <div class="project-grid">
           <ProjectCard
             v-for="(project, i) in architecturalProjects.slice(0, 3)"
@@ -174,6 +194,10 @@ function scrollToContent() {
           </div>
           <RouterLink class="see-all" to="/complementares">Ver todos</RouterLink>
         </div>
+        <p class="section-bridge">
+          São os projetos complementares que garantem que tudo funcione com eficiência na prática: da
+          segurança à operação cotidiana da edificação.
+        </p>
         <div class="project-grid">
           <ProjectCard
             v-for="(project, i) in complementaryProjects.slice(0, 3)"
@@ -193,10 +217,14 @@ function scrollToContent() {
           <p class="eyebrow">Relacionamentos</p>
           <h2 class="section-title">Clientes e Parceiros</h2>
           <p class="section-lead">
-            Empresas e instituições que confiam na Linea — e parceiros que somam técnica e
-            execução.
+            Empresas e instituições que confiam na Linea, junto de parceiros estratégicos que ampliam
+            nossa capacidade de entrega em diferentes frentes.
           </p>
         </div>
+        <p class="section-bridge">
+          Relações de longo prazo são construídas com consistência: atendimento próximo, clareza técnica
+          e compromisso real com resultado.
+        </p>
         <ClientsSection />
       </section>
 
@@ -542,6 +570,90 @@ function scrollToContent() {
   margin-top: 1.75rem;
   color: var(--ink-soft);
   text-align: justify;
+}
+
+.intro-manifesto {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+  margin: 1.7rem auto 0;
+  padding: 1.15rem 1rem 1rem;
+  max-width: 68ch;
+  text-align: center;
+  overflow: hidden;
+}
+
+.intro-manifesto::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(36, 38, 50, 0.09);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(23, 25, 28, 0.04);
+  z-index: -1;
+}
+
+.manifesto-line {
+  margin: 0;
+  max-width: 54ch;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  text-align: center;
+}
+
+.manifesto-line strong {
+  font-weight: 600;
+  color: var(--garnet-deep);
+}
+
+.manifesto-link {
+  margin: 0;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-top: 1px solid rgba(45, 49, 78, 0.1);
+  padding-top: 0.65rem;
+}
+
+.section-bridge {
+  margin: 0 0 1.05rem;
+  max-width: 72ch;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+}
+
+.section-bridge-center {
+  margin: 1.1rem auto 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .intro-manifesto {
+    margin-top: 1.3rem;
+    padding: 1rem 0.85rem 0.9rem;
+    gap: 0.45rem;
+  }
+
+  .manifesto-link {
+    letter-spacing: 0.09em;
+    padding-top: 0.55rem;
+  }
+
+  .section-bridge {
+    margin-bottom: 0.9rem;
+    font-size: 0.93rem;
+  }
 }
 
 .stats {
