@@ -1,0 +1,202 @@
+/* Shared home page section bands — used by HomeView section components */
+
+.home {
+  display: block;
+}
+
+.band {
+  position: relative;
+  width: 100%;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.band-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.band-paper {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+}
+
+.band-plain {
+  background: transparent;
+}
+
+.band-tint {
+  background:
+    radial-gradient(ellipse 60% 70% at 100% 0%, rgba(227, 6, 19, 0.06), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.5));
+  border-block: 1px solid rgba(53, 57, 74, 0.08);
+}
+
+.band-quote {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+}
+
+.band-dark {
+  background:
+    radial-gradient(ellipse 50% 60% at 8% 0%, rgba(240, 58, 68, 0.26), transparent 55%),
+    radial-gradient(ellipse 45% 60% at 95% 100%, rgba(74, 93, 106, 0.32), transparent 55%),
+    linear-gradient(135deg, #191d2d, #242a42 55%, #1b2033);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.band-dark .section-title {
+  color: #fff;
+}
+
+.band-dark .section-title::before {
+  background: linear-gradient(180deg, var(--garnet-soft), rgba(255, 255, 255, 0.5));
+}
+
+.band-dark .section-lead {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.band-cta {
+  background:
+    radial-gradient(ellipse 45% 70% at 12% 10%, rgba(227, 6, 19, 0.32), transparent 55%),
+    linear-gradient(120deg, #b5050f, #7d0510 60%, #2a1420);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.anchor-section {
+  scroll-margin-top: calc(var(--header-h) + 1.25rem);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.section-intro {
+  margin-bottom: 1.35rem;
+}
+
+.section-intro .section-title {
+  margin-bottom: 0.65rem;
+}
+
+.section-intro.compact {
+  margin-bottom: 0;
+}
+
+.section-intro.compact .section-title {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.section-lead {
+  margin: 0;
+  max-width: 54ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  text-align: left;
+  hyphens: none;
+}
+
+.section-intro .section-lead {
+  margin-top: 0.15rem;
+}
+
+.section-bridge {
+  margin: 0 0 1.05rem;
+  max-width: 72ch;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.section-head .section-title {
+  margin-bottom: 0;
+}
+
+.see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: var(--garnet);
+  white-space: nowrap;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  transition: color 0.25s var(--ease), gap 0.25s var(--ease);
+}
+
+.see-all::after {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s var(--ease);
+}
+
+.see-all:hover {
+  color: var(--garnet-deep);
+  gap: 0.65rem;
+}
+
+.see-all:hover::after {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.rail-offset {
+  margin-left: -3rem;
+}
+
+@media (max-width: 900px) {
+  .band {
+    padding-block: clamp(2.25rem, 5vw, 3.5rem);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-head .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-bridge {
+    margin-bottom: 0.9rem;
+    font-size: 0.93rem;
+  }
+
+  .band-cta {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .rail-offset {
+    margin-left: -1.25rem;
+  }
+}
