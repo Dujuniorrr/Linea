@@ -1,0 +1,9 @@
+# https://linea.eng.br/robots.txt
+User-agent: *
+Allow: /
+
+# Bloquear rotas sem valor de indexação
+Disallow: /contact.aspx
+Disallow: /page2.aspx
+
+Sitemap: https://linea.eng.br/sitemap.xml

@@ -20,7 +20,7 @@ import BrandLogo from './BrandLogo.vue'
     </div>
     <div class="container footer-bottom">
       <span>© {{ new Date().getFullYear() }} {{ site.legalName }}</span>
-      <span>Curitiba — Paraná</span>
+      <span>Curitiba — Paraná · <a :href="site.url">{{ site.url.replace('https://', '') }}</a></span>
     </div>
   </footer>
 </template>
@@ -95,6 +95,16 @@ import BrandLogo from './BrandLogo.vue'
   font-weight: 300;
   letter-spacing: 0.04em;
   color: #8b949c;
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer-bottom a:hover {
+  color: var(--garnet-soft);
 }
 
 @media (max-width: 720px) {

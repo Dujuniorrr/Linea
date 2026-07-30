@@ -22,6 +22,7 @@ function images(list) {
 export const site = {
   name: 'Linea',
   legalName: 'Linea Engenharia e Arquitetura Ltda',
+  url: 'https://www.linea.eng.br',
   tagline: 'Soluções inovadoras em engenharia e arquitetura, com precisão técnica e atendimento excepcional.',
   founded: 2010,
   slogan: 'Quando a solução for simples. A resposta vem de Deus!!',

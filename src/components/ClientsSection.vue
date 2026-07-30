@@ -1,27 +1,36 @@
 <script setup>
 import { clients, partners } from '../data/content'
 import LogoMarquee from './LogoMarquee.vue'
+
+const clientRows = (() => {
+  const mid = Math.ceil(clients.length / 2)
+  return [clients.slice(0, mid), clients.slice(mid)]
+})()
 </script>
 
 <template>
   <div class="clients-section">
     <div class="block">
       <div class="block-head">
-        <p class="eyebrow-mini">Confiança</p>
         <h3 class="sub-title">Clientes atendidos</h3>
       </div>
-      <div class="band">
-        <LogoMarquee :items="clients" :duration="48" />
+      <div class="marquee-band">
+        <div class="clients-desktop">
+          <LogoMarquee :items="clients" :duration="48" />
+        </div>
+        <div class="clients-mobile">
+          <LogoMarquee :items="clientRows[0]" :duration="36" />
+          <LogoMarquee :items="clientRows[1]" :duration="42" reverse class="row-offset" />
+        </div>
       </div>
     </div>
 
     <div class="block partners-block">
       <div class="block-head">
-        <p class="eyebrow-mini">Rede</p>
         <h3 class="sub-title">Parceiros de trabalho</h3>
       </div>
-      <div class="band">
-        <LogoMarquee :items="partners" :duration="48" reverse />
+      <div class="marquee-band">
+        <LogoMarquee :items="partners" :duration="40" reverse />
       </div>
     </div>
   </div>
@@ -30,7 +39,7 @@ import LogoMarquee from './LogoMarquee.vue'
 <style scoped>
 .clients-section {
   display: grid;
-  gap: 2.85rem;
+  gap: 2.5rem;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -43,59 +52,63 @@ import LogoMarquee from './LogoMarquee.vue'
 }
 
 .block-head {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.05rem;
   min-width: 0;
-}
-
-.eyebrow-mini {
-  margin: 0 0 0.4rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--garnet);
 }
 
 .sub-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
   font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--ink);
   min-width: 0;
 }
 
-.band {
+.marquee-band {
   position: relative;
-  padding: 1.35rem 0.85rem;
+  padding: 1.2rem 0.75rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.55)),
     var(--garnet-wash);
-  border: 1px solid rgba(227, 6, 19, 0.1);
-  border-radius: 1.25rem;
+  border: 1px solid rgba(227, 6, 19, 0.12);
+  border-radius: 1.15rem;
   overflow: hidden;
 }
 
-.band::before,
-.band::after {
+.marquee-band::before,
+.marquee-band::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 3.5rem;
+  width: 3.25rem;
   z-index: 2;
   pointer-events: none;
 }
 
-.band::before {
+.marquee-band::before {
   left: 0;
-  background: linear-gradient(90deg, rgba(242, 243, 241, 0.95), transparent);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), transparent);
 }
 
-.band::after {
+.marquee-band::after {
   right: 0;
-  background: linear-gradient(270deg, rgba(242, 243, 241, 0.95), transparent);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.95), transparent);
+}
+
+.clients-desktop {
+  display: block;
+}
+
+.clients-mobile {
+  display: none;
+  gap: 0.85rem;
+}
+
+.row-offset {
+  margin-left: -2.5rem;
 }
 
 .partners-block {
@@ -104,14 +117,30 @@ import LogoMarquee from './LogoMarquee.vue'
 
 @media (max-width: 900px) {
   .clients-section {
-    gap: 2.25rem;
+    gap: 2rem;
+  }
+
+  .clients-desktop {
+    display: none;
+  }
+
+  .clients-mobile {
+    display: grid;
   }
 }
 
 @media (max-width: 480px) {
-  .band {
-    padding: 1rem 0.35rem;
+  .marquee-band {
+    padding: 0.9rem 0.3rem;
     border-radius: 1rem;
+  }
+
+  .clients-mobile {
+    gap: 0.65rem;
+  }
+
+  .row-offset {
+    margin-left: -1.25rem;
   }
 }
 </style>
