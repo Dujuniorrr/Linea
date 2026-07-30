@@ -124,7 +124,7 @@ function scrollToContent() {
             class="btn btn-primary"
             :href="whatsappHref"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             title="Falar conosco no WhatsApp"
           >
             Falar conosco
@@ -350,7 +350,7 @@ function scrollToContent() {
             class="btn btn-primary"
             :href="whatsappHref"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             title="Falar conosco no WhatsApp"
           >
             Falar conosco
@@ -384,7 +384,7 @@ function scrollToContent() {
               class="btn btn-primary"
               :href="whatsappHref"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               title="Falar conosco no WhatsApp"
             >
               Falar conosco

@@ -43,7 +43,7 @@ const personTitle = [
               <a
                 :href="phone.href"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 :title="phone.whatsapp ? `WhatsApp ${phone.number}` : `Ligar para ${phone.number}`"
               >
                 {{ phone.number }}

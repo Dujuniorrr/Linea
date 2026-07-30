@@ -44,7 +44,6 @@ import BrandLogo from './BrandLogo.vue'
     linear-gradient(180deg, #1a1d21, #121417);
   color: #d7dbd8;
   padding: 3.25rem 0 1.5rem;
-  /* border-radius: 1.5rem 1.5rem 0 0; */
   margin-top: 1rem;
 }
 

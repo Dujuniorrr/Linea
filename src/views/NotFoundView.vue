@@ -41,7 +41,12 @@ import { RouterLink } from 'vue-router'
           </RouterLink>
         </li>
         <li>
-          <a href="https://wa.me/5541996463034" title="Falar com a Linea no WhatsApp">WhatsApp</a>
+          <a
+            href="https://wa.me/5541996463034"
+            title="Falar com a Linea no WhatsApp"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+          >WhatsApp</a>
         </li>
       </ul>
     </nav>
