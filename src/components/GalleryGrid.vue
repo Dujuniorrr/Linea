@@ -416,12 +416,16 @@ onBeforeUnmount(() => {
   position: relative;
   overflow: hidden;
   background: var(--paper-2);
+  aspect-ratio: 4 / 3;
 }
 
 .thumb-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.45s var(--ease);
 }

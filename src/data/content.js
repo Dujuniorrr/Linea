@@ -2,13 +2,14 @@
  * Conteúdo: site legado (linea.eng.br) + Linea Brochure 2024 + materiais de marca.
  */
 
-const galleryFiles = import.meta.glob('../assets/images/gallery/*', {
+const galleryFiles = import.meta.glob('../assets/images/gallery/*.webp', {
   eager: true,
   import: 'default',
 })
 
 function galleryUrl(filename) {
-  const key = `../assets/images/gallery/${filename}`
+  const webpName = filename.replace(/\.(jpe?g|png)$/i, '.webp')
+  const key = `../assets/images/gallery/${webpName}`
   return galleryFiles[key] || ''
 }
 
@@ -47,6 +48,8 @@ export const about = {
     'Com quase duas décadas dedicadas à excelência em arquitetura e engenharia, a Linea se destaca pelo profissionalismo, moldando o futuro com soluções inovadoras, atendimento personalizado e a garantia de obras totalmente regularizadas.',
   experience:
     'Ao longo de 19 anos, construímos uma base sólida atuando em projetos desafiadores e diversos. Nosso compromisso é atender qualquer demanda com profundo domínio das normas vigentes. A combinação entre conhecimento técnico e rigor normativo nos coloca à frente — transformamos conceitos em realidade, oferecendo desde Projetos de Arquitetura e Projetos Complementares até a Regularização completa de empreendimentos residenciais, comerciais e de infraestrutura.',
+  focus:
+    'Desenvolvemos soluções técnicas para o bom funcionamento da edificação: do conceito à aprovação, com projetos em BIM, instalações seguras e regularização completa. Assim, cada edificação ganha desempenho, previsibilidade e conformidade no uso cotidiano.',
   closing: 'Na Linea, unimos precisão, eficiência e responsabilidade em cada etapa. Conheça a Linea Engenharia.',
   projectTypes: [
     'Edifícios Residenciais',
@@ -307,79 +310,79 @@ export const complementaryProjects = [
 export const clients = [
   {
     name: 'Ramo',
-    logo: new URL('../assets/images/logos/clients/ramo.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/ramo.webp', import.meta.url).href,
   },
   {
     name: 'HAVAN',
-    logo: new URL('../assets/images/logos/clients/havan.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/havan.webp', import.meta.url).href,
   },
   {
     name: 'Braspress',
-    logo: new URL('../assets/images/logos/clients/braspress.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/braspress.webp', import.meta.url).href,
   },
   {
     name: 'Cerâmica Andorinhas',
-    logo: new URL('../assets/images/logos/clients/ceramica-andorinhas.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/ceramica-andorinhas.webp', import.meta.url).href,
   },
   {
     name: 'Simec',
-    logo: new URL('../assets/images/logos/clients/simec.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/simec.webp', import.meta.url).href,
   },
   {
     name: 'Lyx',
-    logo: new URL('../assets/images/logos/clients/lyx.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/lyx.webp', import.meta.url).href,
   },
   {
     name: 'Colégio Senhora de Fátima',
-    logo: new URL('../assets/images/logos/clients/colegio-senhora-fatima.png', import.meta.url)
+    logo: new URL('../assets/images/logos/clients/colegio-senhora-fatima.webp', import.meta.url)
       .href,
   },
   {
     name: 'Anaconda',
-    logo: new URL('../assets/images/logos/clients/anaconda.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/anaconda.webp', import.meta.url).href,
   },
   {
     name: 'Obra 3',
-    logo: new URL('../assets/images/logos/clients/obra-3.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/obra-3.webp', import.meta.url).href,
   },
   {
     name: 'Aeroflex',
-    logo: new URL('../assets/images/logos/clients/aeroflex.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/aeroflex.webp', import.meta.url).href,
   },
   {
     name: 'Escola Solos',
-    logo: new URL('../assets/images/logos/clients/escola-solos.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/escola-solos.webp', import.meta.url).href,
   },
   {
     name: 'JLP',
-    logo: new URL('../assets/images/logos/clients/jlp.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/jlp.webp', import.meta.url).href,
   },
   {
     name: 'Terra Rica Calcário',
-    logo: new URL('../assets/images/logos/clients/terra-rica.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/terra-rica.webp', import.meta.url).href,
   },
 ]
 
 export const partners = [
   {
     name: 'DJA',
-    logo: new URL('../assets/images/logos/partners/dja-engenharia.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/partners/dja-engenharia.webp', import.meta.url).href,
   },
   {
     name: 'Flexcon',
-    logo: new URL('../assets/images/logos/partners/flexcon.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/partners/flexcon.webp', import.meta.url).href,
   },
   {
     name: 'Regulare',
-    logo: new URL('../assets/images/logos/partners/regulare.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/partners/regulare.webp', import.meta.url).href,
   },
   {
     name: 'Obra 3',
-    logo: new URL('../assets/images/logos/clients/obra-3.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/clients/obra-3.webp', import.meta.url).href,
   },
   {
     name: 'DuARCO Engenharia e Projetos',
-    logo: new URL('../assets/images/logos/partners/duarco.png', import.meta.url).href,
+    logo: new URL('../assets/images/logos/partners/duarco.webp', import.meta.url).href,
   },
 ]
 
@@ -412,7 +415,7 @@ export const contacts = {
       'CAUPR A-52093-4',
       'Engenheira Técnica em Segurança do Trabalho',
     ],
-    photo: new URL('../assets/images/team/jaqueline.png', import.meta.url).href,
+    photo: new URL('../assets/images/team/jaqueline.webp', import.meta.url).href,
   },
   offices: [
     {

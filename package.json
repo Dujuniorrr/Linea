@@ -14,6 +14,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.7",
-    "vite": "^8.1.1"
+    "sharp": "^0.35.3",
+    "svgo": "^4.0.2",
+    "vite": "^8.1.1",
+    "vite-plugin-image-optimizer": "^2.0.3"
   }
 }

@@ -98,7 +98,8 @@ function isActive(item) {
 .brand {
   display: inline-flex;
   align-items: center;
-  min-width: 0;
+  min-width: 7.5rem;
+  min-height: 2.15rem;
 }
 
 .nav {

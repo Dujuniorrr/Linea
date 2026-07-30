@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://linea.eng.br'
+export const SITE_URL = 'https://www.linea.eng.br'
 
 export const SITE_NAME = 'Linea Engenharia e Arquitetura'
 
@@ -23,7 +23,7 @@ export const DEFAULT_KEYWORDS = [
   'projeto elétrico',
 ].join(', ')
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.webp`
 
 export const BRAND_TITLE = SITE_NAME
 

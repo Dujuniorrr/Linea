@@ -1,0 +1,28 @@
+{
+  "name": "Linea Engenharia e Arquitetura",
+  "short_name": "Linea",
+  "description": "Arquitetura e engenharia em Curitiba — projetos BIM e regularização de obras.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f3f1",
+  "theme_color": "#E30613",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

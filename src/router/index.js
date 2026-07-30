@@ -7,6 +7,7 @@ import ComplementaryDetailView from '../views/ComplementaryDetailView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import { findArchitectural, findComplementary } from '../data/content'
 import { applySeo } from '../seo/applySeo'
+import { trackPageView } from '../seo/analytics'
 import { DEFAULT_DESCRIPTION, SITE_URL } from '../seo/site'
 
 const router = createRouter({
@@ -133,6 +134,7 @@ function resolveSeo(to) {
 
 router.afterEach((to) => {
   applySeo(resolveSeo(to))
+  trackPageView(to.fullPath)
 })
 
 export default router

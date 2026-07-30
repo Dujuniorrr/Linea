@@ -108,7 +108,7 @@ function scrollToContent() {
       </div>
 
       <div class="container hero-content">
-        <div class="fade-up">
+        <div class="hero-brand">
           <BrandLogo variant="light" size="hero" />
         </div>
         <p class="hero-lead fade-up fade-up-delay-2">{{ site.tagline }}</p>
@@ -157,6 +157,7 @@ function scrollToContent() {
               <h1 class="page-title">Soluções técnicas para o bom funcionamento da edificação</h1>
               <p class="intro-text">{{ about.intro }}</p>
               <p class="intro-text">{{ about.experience }}</p>
+              <p class="intro-text">{{ about.focus }}</p>
               <p class="intro-closing">
                 Na Linea, unimos <strong>precisão, eficiência e responsabilidade</strong> em cada etapa.
               </p>
@@ -402,10 +403,11 @@ function scrollToContent() {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 22rem;
+  min-height: min(50svh, 24rem);
   overflow: hidden;
   color: #fff;
   isolation: isolate;
+  contain: layout;
 }
 
 .hero-bg {
@@ -416,7 +418,14 @@ function scrollToContent() {
     linear-gradient(180deg, rgba(18, 20, 22, 0.35) 0%, rgba(18, 20, 22, 0.72) 55%, rgba(18, 20, 22, 0.92) 100%),
     linear-gradient(115deg, rgba(227, 6, 19, 0.38), rgba(181, 5, 15, 0.12) 38%, transparent 52%),
     radial-gradient(ellipse 50% 40% at 85% 20%, rgba(240, 58, 68, 0.18), transparent 60%),
-    url('../assets/images/hero-building.jpg') center / cover no-repeat;
+    url('/hero-lcp.webp') center / cover no-repeat;
+  content-visibility: auto;
+}
+
+.hero-brand {
+  min-height: clamp(3.75rem, 12vw, 6.5rem);
+  display: flex;
+  align-items: center;
 }
 
 .hero-build {
@@ -1259,7 +1268,7 @@ function scrollToContent() {
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 0;
+    min-height: min(50svh, 24rem);
     height: auto;
     max-height: none;
     padding-block: 1.75rem 1.25rem;
@@ -1267,6 +1276,10 @@ function scrollToContent() {
 
   .hero-content {
     padding-block: 0.5rem 0.25rem;
+  }
+
+  .hero-brand {
+    min-height: clamp(2.5rem, 10vw, 3.4rem);
   }
 
   .hero-content :deep(.logo.hero .wordmark-img) {

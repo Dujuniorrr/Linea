@@ -39,7 +39,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: var(--font-body);
+  font-family: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
   font-size: 1.05rem;
   line-height: 1.65;
   background:
@@ -68,6 +68,29 @@ body {
 img {
   max-width: 100%;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: max(1rem, 3vw);
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 a {
@@ -252,29 +275,27 @@ p {
 }
 
 .fade-up {
-  animation: fadeUp 0.8s var(--ease) both;
+  animation: fadeUp 0.45s var(--ease) both;
 }
 
 .fade-up-delay-1 {
-  animation-delay: 0.12s;
+  animation-delay: 0.08s;
 }
 
 .fade-up-delay-2 {
-  animation-delay: 0.24s;
+  animation-delay: 0.14s;
 }
 
 .fade-up-delay-3 {
-  animation-delay: 0.36s;
+  animation-delay: 0.2s;
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

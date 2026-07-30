@@ -22,10 +22,13 @@
     <meta name="geo.region" content="BR-PR" />
     <meta name="geo.placename" content="Curitiba" />
 
-    <link rel="canonical" href="https://linea.eng.br/" />
+    <link rel="canonical" href="https://www.linea.eng.br/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/logo-mark.jpg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <meta property="og:site_name" content="Linea Engenharia e Arquitetura" />
@@ -36,8 +39,8 @@
       property="og:description"
       content="Linea em Curitiba: arquitetura e engenharia em BIM, prevenção de incêndio, projetos complementares e regularização de obras."
     />
-    <meta property="og:url" content="https://linea.eng.br/" />
-    <meta property="og:image" content="https://linea.eng.br/og-image.jpg" />
+    <meta property="og:url" content="https://www.linea.eng.br/" />
+    <meta property="og:image" content="https://www.linea.eng.br/og-image.webp" />
     <meta property="og:image:alt" content="Linea Engenharia e Arquitetura em Curitiba | Projetos BIM" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,14 +49,112 @@
       name="twitter:description"
       content="Linea em Curitiba: arquitetura e engenharia em BIM, prevenção de incêndio, projetos complementares e regularização de obras."
     />
-    <meta name="twitter:image" content="https://linea.eng.br/og-image.jpg" />
+    <meta name="twitter:image" content="https://www.linea.eng.br/og-image.webp" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="/hero-lcp.webp"
+      type="image/webp"
+      fetchpriority="high"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="/logo-wordmark.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Montserrat:wght@400;600&display=optional"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Montserrat:wght@400;600&display=swap"
+      />
+    </noscript>
+
+    <style>
+      /* Paint imediato + anti-CLS */
+      html,
+      body {
+        margin: 0;
+        background: #121417;
+        color: #f2f3f1;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      .seo-fallback {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+      /* Shell de FCP: overlay fixo (não causa CLS ao sair) */
+      .boot-shell {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 9999;
+        min-height: calc(var(--boot-header, 4.75rem) + min(50svh, 24rem));
+        pointer-events: none;
+        background: #f2f3f1;
+      }
+      .boot-shell::before {
+        content: '';
+        display: block;
+        height: 4.75rem;
+        background: rgba(242, 243, 241, 0.96);
+        border-bottom: 1px solid #c9cec7;
+      }
+      .boot-hero {
+        min-height: min(50svh, 24rem);
+        background:
+          linear-gradient(180deg, rgba(18, 20, 22, 0.35) 0%, rgba(18, 20, 22, 0.72) 55%, rgba(18, 20, 22, 0.92) 100%),
+          url('/hero-lcp.webp') center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        padding: 1.75rem clamp(1rem, 4vw, 2rem) 1.25rem;
+        box-sizing: border-box;
+      }
+      .boot-hero img {
+        width: min(100%, 16rem);
+        height: auto;
+        aspect-ratio: 774 / 322;
+        filter: brightness(0) invert(1);
+      }
+      .app-ready .boot-shell {
+        opacity: 0;
+        transition: opacity 0.12s linear;
+      }
+      @media (max-width: 900px) {
+        .boot-hero {
+          padding: 1.5rem 1rem 1.1rem;
+        }
+        .boot-hero img {
+          width: min(100%, 15rem);
+        }
+      }
+      @media (max-width: 600px) {
+        .boot-hero img {
+          width: min(100%, 13.5rem);
+        }
+      }
+    </style>
 
     <script type="application/ld+json">
       {
@@ -61,21 +162,21 @@
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://linea.eng.br/#website",
-            "url": "https://linea.eng.br/",
+            "@id": "https://www.linea.eng.br/#website",
+            "url": "https://www.linea.eng.br/",
             "name": "Linea Engenharia e Arquitetura",
             "description": "Linea em Curitiba: arquitetura e engenharia em BIM, prevenção de incêndio, projetos complementares e regularização de obras.",
             "inLanguage": "pt-BR",
-            "publisher": { "@id": "https://linea.eng.br/#organization" }
+            "publisher": { "@id": "https://www.linea.eng.br/#organization" }
           },
           {
             "@type": ["ProfessionalService", "LocalBusiness"],
-            "@id": "https://linea.eng.br/#organization",
+            "@id": "https://www.linea.eng.br/#organization",
             "name": "Linea Engenharia e Arquitetura",
             "legalName": "Linea Engenharia e Arquitetura Ltda",
-            "url": "https://linea.eng.br/",
-            "logo": "https://linea.eng.br/logo-mark.jpg",
-            "image": "https://linea.eng.br/og-image.jpg",
+            "url": "https://www.linea.eng.br/",
+            "logo": "https://www.linea.eng.br/logo-mark.jpg",
+            "image": "https://www.linea.eng.br/og-image.webp",
             "description": "Linea em Curitiba: arquitetura e engenharia em BIM, prevenção de incêndio, projetos complementares e regularização de obras.",
             "email": "jaqueline@linea.eng.br",
             "telephone": "+55-41-99646-3034",
@@ -125,62 +226,118 @@
     </script>
   </head>
   <body>
-    <!-- Conteúdo estático para crawlers; o Vue substitui #app ao montar. -->
+    <!-- Shell visual imediato (FCP/LCP) — oculto quando o Vue monta -->
+    <div class="boot-shell" id="boot-shell" aria-hidden="true">
+      <div class="boot-hero">
+        <img
+          src="/logo-wordmark.webp"
+          width="774"
+          height="322"
+          alt=""
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+    <!-- Conteúdo para crawlers (oculto visualmente = sem CLS) -->
     <div id="app">
-      <header>
-        <nav aria-label="Navegação principal">
-          <a href="/">Apresentação</a>
-          <a href="/projetos">Projetos Arquitetônicos</a>
-          <a href="/complementares">Projetos Complementares</a>
-          <a href="/#clientes">Clientes e Parceiros</a>
-          <a href="/#contato">Contatos</a>
-        </nav>
-      </header>
-      <main>
-        <h1>Soluções técnicas para o bom funcionamento da edificação</h1>
-        <p>
-          Linea Engenharia e Arquitetura em Curitiba — projetos arquitetônicos e complementares em
-          BIM, com precisão técnica e obras totalmente regularizadas.
-        </p>
-        <p>
-          <a href="/projetos">Ver projetos arquitetônicos</a>
-          ·
-          <a href="/complementares">Ver projetos complementares</a>
-          ·
-          <a href="/#contato">Falar conosco</a>
-        </p>
+      <div class="seo-fallback">
+        <header>
+          <nav aria-label="Navegação principal">
+            <a href="/" title="Apresentação Linea Engenharia e Arquitetura">Apresentação</a>
+            <a href="/projetos" title="Projetos arquitetônicos da Linea">Projetos Arquitetônicos</a>
+            <a href="/complementares" title="Projetos complementares da Linea">Projetos Complementares</a>
+            <a href="/#clientes" title="Clientes e parceiros da Linea">Clientes e Parceiros</a>
+            <a href="/#contato" title="Contatos da Linea em Curitiba">Contatos</a>
+          </nav>
+        </header>
+        <main>
+          <h1>Soluções técnicas para o bom funcionamento da edificação</h1>
+          <p>
+            A Linea Engenharia e Arquitetura desenvolve soluções técnicas para o bom funcionamento da
+            edificação em Curitiba e região. Nosso trabalho une arquitetura, engenharia e
+            regularização para que cada projeto funcione na prática — com segurança, desempenho e
+            conformidade normativa.
+          </p>
+          <p>
+            Quando falamos em soluções técnicas, pensamos no dia a dia do imóvel: circulação,
+            instalações, prevenção de incêndio, conforto e manutenção. O bom funcionamento da
+            edificação depende de projetos integrados, detalhamento claro e acompanhamento próximo
+            em cada etapa.
+          </p>
+          <p>
+            Com quase duas décadas de experiência, a Linea entrega projetos arquitetônicos e
+            complementares em BIM, além de aprovação e regularização completa de obras. Atendemos
+            empreendimentos residenciais, comerciais, industriais, escolas, hotéis e igrejas, sempre
+            com foco em eficiência e responsabilidade técnica.
+          </p>
+          <p>
+            <a href="/projetos" title="Ver projetos arquitetônicos da Linea">Ver projetos arquitetônicos</a>
+            ·
+            <a href="/complementares" title="Ver projetos complementares da Linea">Ver projetos complementares</a>
+            ·
+            <a href="/#contato" title="Falar conosco e solicitar atendimento">Falar conosco</a>
+          </p>
 
-        <h2>Tipos de projetos realizados</h2>
-        <p>Edifícios residenciais e comerciais, residências, hotéis, indústrias, escolas e igrejas.</p>
+          <h2>Tipos de projetos realizados</h2>
+          <p>
+            Realizamos projetos para edifícios residenciais e comerciais, residências unifamiliares,
+            hotéis, indústrias, escolas e igrejas. Em cada tipologia, priorizamos soluções técnicas
+            que sustentem o bom funcionamento da edificação ao longo do tempo.
+          </p>
 
-        <h2>Serviços</h2>
-        <p>
-          Projetos arquitetônicos, prevenção de incêndio, hidrossanitário, elétrico, gás GLP,
-          regularização de obra (CVCO) e aprovações técnicas.
-        </p>
+          <h2>Serviços</h2>
+          <p>
+            Oferecemos projetos arquitetônicos em BIM, prevenção e combate a incêndios, projetos
+            hidrossanitários, elétricos de baixa tensão, gás GLP, drenagem, parcelamento de terreno,
+            regularização de obra (CVCO), aprovação em meio ambiente, vigilância sanitária e
+            sinalização Setran. Esses serviços formam a base das soluções técnicas que garantem o
+            bom funcionamento da edificação.
+          </p>
 
-        <h2>Projetos em destaque</h2>
-        <p>
-          Conheça o portfólio da Linea em
-          <a href="/projetos">projetos arquitetônicos</a>
-          e
-          <a href="/complementares">projetos complementares</a>.
-        </p>
+          <h2>Como trabalhamos</h2>
+          <p>
+            Começamos pelo diagnóstico: entendemos o uso, as normas e os pontos críticos do
+            empreendimento. Em seguida, desenvolvemos o projeto integrado e conduzimos aprovações.
+            O resultado é uma edificação preparada para operar com previsibilidade, menos retrabalho
+            e mais segurança jurídica.
+          </p>
+          <p>
+            Se o seu desafio é melhorar o desempenho de um imóvel existente ou lançar um novo
+            empreendimento, a Linea oferece soluções técnicas sob medida para cada etapa. Do estudo
+            preliminar à entrega final, cuidamos para que o bom funcionamento da edificação esteja
+            previsto em cada detalhe do projeto, das instalações e da regularização junto aos órgãos
+            competentes.
+          </p>
 
-        <h2>Clientes e Parceiros</h2>
-        <p>
-          Empresas e instituições que confiam na Linea.
-          <a href="/#clientes">Ver clientes e parceiros</a>.
-        </p>
+          <h2>Projetos em destaque</h2>
+          <p>
+            No portfólio você encontra obras que demonstram soluções técnicas aplicadas a diferentes
+            escalas e programas. Conheça os
+            <a href="/projetos" title="Portfólio de projetos arquitetônicos">projetos arquitetônicos</a>
+            e os
+            <a href="/complementares" title="Portfólio de projetos complementares">projetos complementares</a>
+            desenvolvidos pela Linea.
+          </p>
 
-        <h2>Contatos</h2>
-        <p>
-          Atendimento em Curitiba — PR.
-          <a href="/#contato">Ver informações de contato</a>
-          ou
-          <a href="https://wa.me/5541996463034">falar no WhatsApp</a>.
-        </p>
-      </main>
+          <h2>Clientes e Parceiros</h2>
+          <p>
+            Empresas e instituições confiam na Linea para projetos que exigem rigor técnico e
+            atendimento próximo.
+            <a href="/#clientes" title="Ver clientes e parceiros da Linea">Ver clientes e parceiros</a>.
+          </p>
+
+          <h2>Contatos</h2>
+          <p>
+            Atendimento em Curitiba — PR. Se você busca soluções técnicas para o bom funcionamento da
+            edificação, fale com nossa equipe.
+            <a href="/#contato" title="Ver informações de contato da Linea">Ver informações de contato</a>
+            ou
+            <a href="https://wa.me/5541996463034" title="Falar com a Linea no WhatsApp">falar no WhatsApp</a>.
+          </p>
+        </main>
+      </div>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

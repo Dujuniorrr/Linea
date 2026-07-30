@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página não encontrada · Linea Engenharia e Arquitetura</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta
+      name="description"
+      content="Página não encontrada. Volte ao início da Linea Engenharia e Arquitetura ou explore os projetos."
+    />
+    <link rel="canonical" href="https://www.linea.eng.br/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <style>
+      :root {
+        --ink: #17191c;
+        --muted: #6a727c;
+        --paper: #f2f3f1;
+        --garnet: #e30613;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Montserrat, system-ui, sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+      .box {
+        max-width: 34rem;
+      }
+      .code {
+        margin: 0;
+        font-size: clamp(4rem, 14vw, 7rem);
+        color: var(--garnet);
+        line-height: 0.9;
+      }
+      h1 {
+        margin: 0.5rem 0 0;
+        font-weight: 400;
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+      }
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+        padding: 0.55rem 1.1rem;
+        border-radius: 0.65rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .primary {
+        background: var(--garnet);
+        color: #fff;
+      }
+      .ghost {
+        border: 1px solid #c9cec7;
+        color: var(--ink);
+      }
+      @media (max-width: 520px) {
+        nav {
+          flex-direction: column;
+        }
+        a {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="box">
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Página não encontrada</h1>
+      <p>
+        O endereço acessado não existe ou foi movido. Continue explorando o site da Linea
+        Engenharia e Arquitetura.
+      </p>
+      <nav aria-label="Links úteis">
+        <a class="primary" href="/">Ir para o início</a>
+        <a class="ghost" href="/projetos">Projetos arquitetônicos</a>
+        <a class="ghost" href="/complementares">Projetos complementares</a>
+        <a class="ghost" href="/#contato">Contatos</a>
+      </nav>
+    </main>
+  </body>
+</html>

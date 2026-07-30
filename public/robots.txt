@@ -1,4 +1,4 @@
-# https://linea.eng.br/robots.txt
+# https://www.linea.eng.br/robots.txt
 User-agent: *
 Allow: /
 
@@ -6,4 +6,4 @@ Allow: /
 Disallow: /contact.aspx
 Disallow: /page2.aspx
 
-Sitemap: https://linea.eng.br/sitemap.xml
+Sitemap: https://www.linea.eng.br/sitemap.xml

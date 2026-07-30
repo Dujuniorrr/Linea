@@ -1,7 +1,4 @@
 <script setup>
-import logoDark from '../assets/images/logo-oficial.jpg'
-import logoMark from '../assets/images/logo-mark.jpg'
-
 defineProps({
   variant: {
     type: String,
@@ -21,6 +18,10 @@ defineProps({
     default: false,
   },
 })
+
+/* URLs estáveis em /public para preload + cache do LCP */
+const logoDark = '/logo-wordmark.webp'
+const logoMark = '/apple-touch-icon.webp'
 </script>
 
 <template>
@@ -37,8 +38,8 @@ defineProps({
       :src="logoMark"
       alt="Símbolo Linea Engenharia e Arquitetura"
       title="Linea Engenharia e Arquitetura"
-      width="152"
-      height="152"
+      width="180"
+      height="180"
       decoding="async"
       draggable="false"
     />
@@ -48,10 +49,11 @@ defineProps({
       :src="logoDark"
       alt="Linea Engenharia e Arquitetura"
       title="Linea Engenharia e Arquitetura"
-      width="480"
-      height="120"
+      width="774"
+      height="322"
       decoding="async"
-      :fetchpriority="size === 'hero' ? 'high' : undefined"
+      :fetchpriority="size === 'hero' ? 'high' : 'low'"
+      :loading="size === 'hero' ? 'eager' : 'lazy'"
       draggable="false"
     />
   </span>
@@ -72,6 +74,7 @@ defineProps({
   height: auto;
   max-width: 100%;
   object-fit: contain;
+  object-position: left center;
 }
 
 .light .wordmark-img {
@@ -79,24 +82,27 @@ defineProps({
 }
 
 .light.mark .mark-img {
-  /* marca já tem fundo escuro; no hero claro usamos só o símbolo adaptado */
   filter: none;
 }
 
 .sm .wordmark-img {
   height: 1.65rem;
+  width: auto;
 }
 
 .md .wordmark-img {
   height: 2.15rem;
+  width: auto;
 }
 
 .lg .wordmark-img {
   height: 2.85rem;
+  width: auto;
 }
 
 .hero .wordmark-img {
   height: clamp(3.75rem, 12vw, 6.5rem);
+  width: auto;
 }
 
 .sm.mark .mark-img,
