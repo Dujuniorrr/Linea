@@ -7,3 +7,5 @@ Disallow: /contact.aspx
 Disallow: /page2.aspx
 
 Sitemap: https://www.linea.eng.br/sitemap.xml
+
+# Conteúdo curado para LLMs: https://www.linea.eng.br/llms.txt

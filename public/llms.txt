@@ -1,0 +1,33 @@
+# Linea Engenharia e Arquitetura
+
+> Escritório de engenharia e arquitetura em Curitiba (PR) especializado em projetos BIM, projetos complementares e regularização de obras.
+
+A Linea Engenharia e Arquitetura Ltda atua há quase duas décadas em projetos residenciais, comerciais, industriais e institucionais, unindo precisão técnica, conformidade normativa e atendimento personalizado.
+
+## Páginas principais
+
+- [Início](https://www.linea.eng.br/): Apresentação da Linea, serviços, projetos em destaque, clientes e contato
+- [Projetos Arquitetônicos](https://www.linea.eng.br/projetos): Portfólio de projetos arquitetônicos em BIM
+- [Projetos Complementares](https://www.linea.eng.br/complementares): Prevenção de incêndio, hidrossanitário, elétrico e demais disciplinas
+
+## Projetos arquitetônicos
+
+- [Residência Carmen](https://www.linea.eng.br/projetos/residencia-carmen): Projeto residencial unifamiliar
+- [Gmax](https://www.linea.eng.br/projetos/gmax): Projeto arquitetônico comercial/industrial
+- [Escola Solos](https://www.linea.eng.br/projetos/escola-solos): Projeto institucional educacional
+- [Colégio Senhora Fátima](https://www.linea.eng.br/projetos/colegio-senhora-fatima): Projeto institucional educacional
+- [Terracota](https://www.linea.eng.br/projetos/terracota): Projeto arquitetônico
+
+## Projetos complementares
+
+- [INCE Aeroflex](https://www.linea.eng.br/complementares/ince-aeroflex): Prevenção e combate a incêndios
+- [INCE Simone Modas](https://www.linea.eng.br/complementares/ince-simone-modas): Prevenção e combate a incêndios
+- [Hidro Diego](https://www.linea.eng.br/complementares/hidro-diego): Projeto hidrossanitário
+- [ELE Solary](https://www.linea.eng.br/complementares/ele-solary): Projeto elétrico de baixa tensão
+- [ELE Maria Merência](https://www.linea.eng.br/complementares/ele-maria-merencia): Projeto elétrico de baixa tensão
+- [VIG Aeroflex](https://www.linea.eng.br/complementares/vig-aeroflex): Vigilância sanitária / sinalização
+
+## Optional
+
+- [Sitemap](https://www.linea.eng.br/sitemap.xml): Lista completa de URLs do site
+- [Robots](https://www.linea.eng.br/robots.txt): Diretrizes de rastreamento para crawlers
