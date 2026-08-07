@@ -78,15 +78,24 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) return savedPosition
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-        top: 80,
-      }
-    }
-    return { top: 0 }
+    // Adia a leitura de geometria para depois do paint do Vue (evita reflow forçado no mount)
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        if (savedPosition) {
+          resolve(savedPosition)
+          return
+        }
+        if (to.hash) {
+          resolve({
+            el: to.hash,
+            behavior: 'smooth',
+            top: 80,
+          })
+          return
+        }
+        resolve(false)
+      })
+    })
   },
 })
 

@@ -21,7 +21,20 @@ defineProps({
 
 /* URLs estáveis em /public para preload + cache do LCP */
 const logoDark = '/logo-wordmark.webp'
+const logoDark400 = '/logo-wordmark-400.webp'
+const logoDark200 = '/logo-wordmark-200.webp'
 const logoMark = '/apple-touch-icon.webp'
+
+const wordmarkSrcset = `${logoDark200} 200w, ${logoDark400} 400w, ${logoDark} 774w`
+
+/** sizes alinhados às alturas CSS do wordmark (aspect 774/322) */
+const wordmarkSizes = {
+  sm: '64px',
+  md: '83px',
+  lg: '110px',
+  // Lighthouse mediu ~378px no hero; 50vw cobre mobile/tablet com margem
+  hero: '(max-width: 900px) min(50vw, 380px), 380px',
+}
 </script>
 
 <template>
@@ -46,7 +59,9 @@ const logoMark = '/apple-touch-icon.webp'
     <img
       v-else
       class="wordmark-img"
-      :src="logoDark"
+      :src="size === 'hero' ? logoDark400 : logoDark200"
+      :srcset="wordmarkSrcset"
+      :sizes="wordmarkSizes[size] || wordmarkSizes.md"
       alt="Linea Engenharia e Arquitetura"
       title="Linea Engenharia e Arquitetura"
       width="774"
