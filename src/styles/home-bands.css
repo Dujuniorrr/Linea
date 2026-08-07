@@ -4,12 +4,6 @@
   display: block;
 }
 
-/* Reduz trabalho de layout no mount (abaixo da dobra) */
-.home .band {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 28rem;
-}
-
 .band {
   position: relative;
   width: 100%;
